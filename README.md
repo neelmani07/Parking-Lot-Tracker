@@ -19,6 +19,9 @@ unique identifier of the vehicle.) output should return level and parking spot n
 
 
 
+
+
+
 STEPS to RUN the PARLING LOT TRACKER
 
 * Clone the Repository.
@@ -29,7 +32,11 @@ STEPS to RUN the PARLING LOT TRACKER
 
 The program is written using python version 3.5.2.
 
-Program Instructions:
+
+
+
+
+**Program Instructions:**
 
 * When you run the program, a menu will be displayed.
   Follow the on-screen instructions to interact with the parking system.
