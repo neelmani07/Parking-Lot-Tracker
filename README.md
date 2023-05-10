@@ -1,6 +1,6 @@
-# Parking-Lot-Tracker
+# PARKING LOT TRACKER
 
-PROBLEM STATEMENT:-
+**Problem statement:-**
 
 There is a parking lot and it has 2 levels A and B, each level has the capacity to park 20
 vehicles of any size. Level A has parking space numbered from 1-20 and level B has parking
@@ -19,8 +19,7 @@ unique identifier of the vehicle.) output should return level and parking spot n
 
 
 
-STEPS to RUN the PARLING LOT TRACKER
-
+**Steps to run the program:-**
 * Clone the Repository.
 * Go to the project directory,run the following command to execute the program:
 
@@ -29,7 +28,11 @@ STEPS to RUN the PARLING LOT TRACKER
 
 The program is written using python version 3.5.2.
 
-Program Instructions:
+
+
+
+
+**Program Instructions:**
 
 * When you run the program, a menu will be displayed.
   Follow the on-screen instructions to interact with the parking system.
