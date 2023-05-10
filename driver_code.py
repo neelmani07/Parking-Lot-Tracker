@@ -8,18 +8,24 @@ from parking_lot_tracker import ParkingLot
 DEFAULT_FLOORS = 2
 DEFAULT_SLOTS = [20, 20]
 
+def space_validation(parking_lot):
+    """
+    Checks for availability of slots.
+    """
+    return parking_lot.is_slot_available()
+
 
 def validations(parking_lot, reg_num):
     """
-    Takes input and Performs some common validation.
+    Takes input and Performs some in-common validation.
     """
     if not reg_num:
         return False
-    elif parking_lot.action == 1 and parking_lot.is_vehicle_reg_num_duplicate(reg_num):
+    elif parking_lot.get_action() == 1 and parking_lot.is_vehicle_reg_num_duplicate(reg_num):
         return False
-    elif parking_lot.action == 2 and not parking_lot.is_vehicle_present(reg_num):
+    elif parking_lot.get_action() == 2 and not parking_lot.is_vehicle_present(reg_num):
         return False
-    elif parking_lot.action == 3 and not parking_lot.is_vehicle_present(reg_num):
+    elif parking_lot.get_action() == 3 and not parking_lot.is_vehicle_present(reg_num):
         return False
     else:
         return True
@@ -28,7 +34,7 @@ def park(parking_lot):
     """
     Book a spot.
     """
-    if not parking_lot.is_slot_available():
+    if not space_validation(parking_lot):
         print ("No space available. Sorry!")
     else:
         reg_num = input("Enter vehicle registration number: ")
@@ -60,7 +66,7 @@ def unpark(parking_lot):
     else:
         print("Invalid Entry. \nNo such vehicle or null entry.")
 
-def exit_program(parking_lot):
+def exit_program(*args):
     """
     exit from the lot.
     """
@@ -102,7 +108,7 @@ def main():
             else:
                 print("Invalid choice. Please try again.")
         except Exception as e:
-            print("Invalid entry")
+            print("Invalid entry",e)
 
 
 if __name__ == "__main__":

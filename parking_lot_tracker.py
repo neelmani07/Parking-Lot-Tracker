@@ -119,3 +119,15 @@ class ParkingLot:
         """
         slot_num = self.occupied_slots[vehicle_num]
         return slot_num.get_floor_number(), slot_num.get_spot_position()
+
+    def get_action(self):
+        """
+        Returns the action required in the slot.
+
+        Args:
+           None
+
+        Returns:
+            Returns the action's value.
+        """
+        return self.action
