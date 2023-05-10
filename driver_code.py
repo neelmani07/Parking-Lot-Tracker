@@ -102,7 +102,7 @@ def main():
 
         try:
             action = MENU_OPTIONS.get(choice)
-            parking_lot.action = int(choice)
+            parking_lot.set_action(int(choice))
             if action:
                 action(parking_lot)
             else:
