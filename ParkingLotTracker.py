@@ -23,6 +23,7 @@ class ParkingLot:
         self.spots_for_each_floor_list = spots_for_each_floor_list
         self.available_slots =  deque()
         self.occupied_slots = {}
+        self.action = None
         slot_count = 1
         for floor, spots in enumerate(self.spots_for_each_floor_list, start=1):
             for spot in range(1, spots + 1):
@@ -41,26 +42,25 @@ class ParkingLot:
             Slot: The Slot object representing the parking spot where the vehicle is parked.
         The checks for availablity of slots is already done  in driver code.
         """
-
         slot = self.available_slots.popleft()
         self.occupied_slots[vehicle_num] = slot
         return slot
 
-    def get_slot(self, vehicle_num):
+    def is_vehicle_present(self, vehicle_num):
         """
-        Retrieves the parking spot information for a vehicle with the given registration number.
+        Check if a vehicle is present in lot.
 
         Args:
             vehicle_num (Any): The registration number of the vehicle.
 
         Returns:
-            Slot: The Slot object representing the parking spot where the vehicle is parked.
-                  Returns None if the vehicle is not parked.
-
+            True if vehicle is present in lot,
+            else False.
         """
-        if vehicle_num in self.occupied_slots:
-            return self.occupied_slots[vehicle_num]
-        return None
+        if vehicle_num not in self.occupied_slots:
+            return False
+        else:
+            return True
 
     def unpark(self, vehicle_num):
         """
@@ -74,9 +74,6 @@ class ParkingLot:
                   Returns None if the vehicle is not parked.
 
         """
-        if vehicle_num not in self.occupied_slots:
-            return None
-
         slot = self.occupied_slots.pop(vehicle_num)
         self.available_slots.append(slot)
         return slot
@@ -109,3 +106,16 @@ class ParkingLot:
             return True
         else:
             return False
+
+    def get_level_and_spot(self, vehicle_num):
+        """
+        Provides floor level and spot position for a vehicle.
+
+        Args:
+           vehicle_num (Any): The registration number of the vehicle.
+
+        Returns:
+            floor level and spot number.
+        """
+        slot_num = self.occupied_slots[vehicle_num]
+        return slot_num.get_floor_number(), slot_num.get_spot_position()
