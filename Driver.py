@@ -34,7 +34,7 @@ def display_menu():
                         spot_registered = parking_lot_tracker.park(reg_num)
                         print("Vehicle Parked at floor {} and spot no {}.".format(spot_registered.get_floor_number(), spot_registered.get_spot_position()))
                 else:
-                    print("Nothing enetered.")
+                    print("Nothing entered.")
 
         elif choice == "2":
             # retrieve a spot
