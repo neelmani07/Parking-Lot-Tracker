@@ -29,13 +29,13 @@ STEPS to RUN the PARLING LOT TRACKER
 
 The program is written using python version 3.5.2.
 
-* Program Instructions:
+Program Instructions:
 
 * When you run the program, a menu will be displayed.
   Follow the on-screen instructions to interact with the parking system.
   The program provides options to book a parking spot, retrieve parking spot number, clear a
   parking spot, and exit.
-* Provide Input:
+Provide Input:
 
 * The program will prompt you for input, such as vehicle registration numbers.
   Enter the required information as per the instructions provided.
@@ -44,7 +44,7 @@ The program is written using python version 3.5.2.
 * The program will display relevant information based on the chosen options.
   For example, it will show the parking spot assigned, retrieved parking spot details, or
   success/failure messages.
-* Terminate the Program:
+Terminate the Program:
 
 * To exit the program, choose the "Exit" option from the menu.
 The program will display a message thanking you for using the parking system.

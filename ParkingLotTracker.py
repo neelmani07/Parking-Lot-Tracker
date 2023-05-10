@@ -23,11 +23,12 @@ class ParkingLot:
         self.spots_for_each_floor_list = spots_for_each_floor_list
         self.available_slots =  deque()
         self.occupied_slots = {}
-
+        slot_count = 1
         for floor, spots in enumerate(self.spots_for_each_floor_list, start=1):
             for spot in range(1, spots + 1):
-                slot = Slot(floor, spot)
+                slot = Slot(chr(floor + 64), slot_count)
                 self.available_slots.append(slot)
+                slot_count+=1
 
 
     def park(self, vehicle_num):
