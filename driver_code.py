@@ -40,7 +40,7 @@ def park(parking_lot):
         reg_num = input("Enter vehicle registration number: ")
         if validations(parking_lot, reg_num):
             parking_lot.park(reg_num)
-            print("Vehicle Parked at successfully!")
+            print("Vehicle Parked successfully!")
         else:
             print("Invalid Entry!. \nVehicle number already taken or null entry")
 
