@@ -30,7 +30,6 @@ class ParkingLot:
                 self.available_slots.append(slot)
                 slot_count+=1
 
-
     def park(self, vehicle_num):
         """
         Parks a vehicle with the given registration number.
@@ -81,3 +80,32 @@ class ParkingLot:
         slot = self.occupied_slots.pop(vehicle_num)
         self.available_slots.append(slot)
         return slot
+
+    def is_slot_available(self):
+        """
+        Check if a slot is available.
+
+        Args:
+           None
+
+        Returns:
+            True if a slot is available,
+            else False.
+        """
+        return True if self.available_slots else False
+
+    def is_vehicle_reg_num_duplicate(self, vehicle_num):
+        """
+        Check if given vehicle number is already belong to somebody else.
+
+        Args:
+           vehicle_num (Any): The registration number of the vehicle.
+
+        Returns:
+            True if vehicle number is duplicate,
+            else False.
+        """
+        if self.occupied_slots.get(vehicle_num):
+            return True
+        else:
+            return False
