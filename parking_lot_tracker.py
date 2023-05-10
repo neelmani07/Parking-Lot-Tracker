@@ -5,7 +5,7 @@ This file contains the definition of class Parking Lot.
 from typing import Any
 from collections import deque
 
-from ParkingSlots import Slot
+from parking_slots import Slot
 
 
 class ParkingLot:

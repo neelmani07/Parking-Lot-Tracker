@@ -2,7 +2,7 @@
 This file contains the driver code for running the parking lot tracker.
 """
 
-from ParkingLotTracker import ParkingLot
+from parking_lot_tracker import ParkingLot
 
 
 DEFAULT_FLOORS = 2
@@ -36,7 +36,7 @@ def park(parking_lot):
             spot_registered = parking_lot.park(reg_num)
             print("Vehicle Parked at floor {} and spot no {}.".format(spot_registered.get_floor_number(), spot_registered.get_spot_position()))
         else:
-            print("Invalid Entry.")
+            print("Invalid Entry!. \nVehicle number already taken or null entry")
 
 def retrieve_spot(parking_lot):
     """
@@ -47,7 +47,7 @@ def retrieve_spot(parking_lot):
         level, spot = parking_lot.get_level_and_spot(reg_num)
         print("{{'level': {}, 'spot': {}}}".format(level, spot))
     else:
-        print("Invalid Entry.")
+        print("Invalid Entry. \nNo such vehicle or null entry.")
 
 def unpark(parking_lot):
     """
@@ -58,7 +58,7 @@ def unpark(parking_lot):
         parking_lot.unpark(reg_num)
         print("vehile unparked successfully!")
     else:
-        print("Invalid Entry.")
+        print("Invalid Entry. \nNo such vehicle or null entry.")
 
 def exit_program(parking_lot):
     """
