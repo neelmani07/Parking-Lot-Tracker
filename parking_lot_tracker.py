@@ -44,7 +44,6 @@ class ParkingLot:
         """
         slot = self.available_slots.popleft()
         self.occupied_slots[vehicle_num] = slot
-        return slot
 
     def is_vehicle_present(self, vehicle_num):
         """
@@ -76,7 +75,6 @@ class ParkingLot:
         """
         slot = self.occupied_slots.pop(vehicle_num)
         self.available_slots.append(slot)
-        return slot
 
     def is_slot_available(self):
         """
