@@ -1,0 +1,65 @@
+Let us analyse the time and space complexity.
+
+1)
+the ParkingLot class:
+
+__init__(self, num_of_floors, spots_for_each_floor_list)
+
+Time Complexity: O(n * m)
+
+n is the number of floors (num_of_floors)
+m is the average number of spots per floor (average of spots_for_each_floor_list)
+The initialization loop iterates over each floor and spot to create Slot objects and add them to the available_slots deque.
+Space Complexity: O(n * m)
+
+The available_slots deque and occupied_slots dictionary store references to Slot objects.
+park(self, vehicle_num)
+
+Time Complexity: O(1)
+
+The method performs constant-time operations such as popleft() on the available_slots deque and adds the vehicle to the occupied_slots dictionary.
+
+Space Complexity: O(1)
+
+The method uses a constant amount of additional space to store the vehicle in the occupied_slots dictionary.
+get_slot(self, vehicle_num)
+
+Time Complexity: O(1)
+
+The method performs a dictionary lookup in the occupied_slots dictionary to retrieve the parking spot for the given vehicle.
+Space Complexity: O(1)
+
+The method uses a constant amount of additional space.
+unpark(self, vehicle_num)
+
+Time Complexity: O(1)
+
+The method performs constant-time operations such as pop() on the occupied_slots dictionary and adds the spot back to the available_slots deque.
+Space Complexity: O(1)
+
+The method uses a constant amount of additional space.
+Overall, the time complexity of most methods is O(1) because they perform constant-time operations.
+The space complexity is O(n * m) because the available_slots deque and occupied_slots dictionary store references to Slot objects,
+where n is the number of floors and m is the average number of spots per floor.
+
+2)
+The Slot class
+has three methods: __init__(), get_floor_number(), and get_spot_position().
+
+__init__(self, floors_number, spot_postion)
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+The __init__() method initializes the floors_number and spot_postion attributes of the Slot instance. It performs a constant number of operations, so the time and space complexity are both O(1).
+
+get_floor_number(self)
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+The get_floor_number() method returns the floors_number attribute. It performs a simple attribute access operation, which takes constant time and space.
+
+get_spot_position(self)
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+The get_spot_position() method returns the spot_postion attribute. It also performs a simple attribute access operation, which takes constant time and space.

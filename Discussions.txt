@@ -1,0 +1,10 @@
+This file is intentded to cover some of the thoughts/questions that arose while
+designing the architecture.
+
+* I have tried to focus on the scalability of the design keeping in mind that the floor number and slots
+for each floor can be scaled up. Therefore ,  have made use of a separate class called Slot
+rather than just hardcoding the floor and its spot numbers.
+
+* I have also designed the parking lot to provide an option for Un Parking.
+If just Parking and retrieval was to be designed, the structure could have been direct and short,
+But to design the structure in order to be sclable and more attractive, I thought of implementing Unparking too.
