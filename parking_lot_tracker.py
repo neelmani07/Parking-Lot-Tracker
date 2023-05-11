@@ -105,7 +105,7 @@ class ParkingLot:
         else:
             return False
 
-    def get_level_and_spot(self, vehicle_num):
+    def retrieve(self, vehicle_num):
         """
         Provides floor level and spot position for a vehicle.
 

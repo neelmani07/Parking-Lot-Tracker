@@ -50,7 +50,7 @@ def retrieve_spot(parking_lot):
     """
     reg_num = input("Enter vehicle registration number: ")
     if validations(parking_lot, reg_num):
-        level, spot = parking_lot.get_level_and_spot(reg_num)
+        level, spot = parking_lot.retrieve(reg_num)
         print("{{'level': {}, 'spot': {}}}".format(level, spot))
     else:
         print("Invalid Entry! \nNo such vehicle or null entry.")
@@ -64,7 +64,7 @@ def unpark(parking_lot):
         parking_lot.unpark(reg_num)
         print("vehile unparked successfully!")
     else:
-        print("Invalid Entry. \nNo such vehicle or null entry.")
+        print("Invalid Entry! \nNo such vehicle or null entry.")
 
 def exit_program(*args):
     """
